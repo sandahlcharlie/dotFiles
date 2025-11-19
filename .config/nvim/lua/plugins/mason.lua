@@ -13,7 +13,7 @@ return {
     })
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "pyright", "r_language_server", "yamlls", "bashls", "lua_ls", "jsonls",},
+      ensure_installed = { "pyright", "r_language_server", "yamlls", "bashls", "lua_ls", "jsonls", "sqlls",},
       automatic_installation = true,
     })
   end,

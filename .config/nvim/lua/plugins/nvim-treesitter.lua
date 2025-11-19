@@ -8,7 +8,7 @@ return {
             local parser_installed = {
                 "python", "go", "c", "lua", "vim", "vimdoc", "query",
                 "markdown_inline", "markdown", "javascript", "typescript",
-                "json", "css", "bash", "zsh", "java", "rust", "r",
+                "json", "css", "bash", "zsh", "java", "rust", "r", "sql",
             }
             require'nvim-treesitter'.setup {
                 install_dir = vim.fn.stdpath('data') .. '/data/nvim-treesitter'

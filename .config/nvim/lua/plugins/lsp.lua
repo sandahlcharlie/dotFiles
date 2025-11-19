@@ -89,6 +89,12 @@ return {
     })
     vim.lsp.enable("r_language_server")
 
+    vim.lsp.config("sqlls", {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { "sql", "mysql" },
+    })
+    vim.lsp.enable("sqlls")
 
     -- Example for more servers:
     -- for _, name in ipairs({ "ruff", "lua_ls", "bashls" }) do

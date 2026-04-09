@@ -62,18 +62,29 @@ alias config='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias configpub='git --git-dir=$HOME/.config-public/ --work-tree=$HOME'
 alias homeon='wg-quick up ~/wireguard/wg0.conf'
 alias homeoff='wg-quick down ~/wireguard/wg0.conf'
+
+# Common Help
 cheat() {
-if [ "$1" = "nvim" ]; then
-nvim ~/.config/nvim/cheatsheet.md
-else
-echo "Cheatsheet for '$1' not found"
-fi
-if [ "$1" = "tmux" ]; then
-nvim ~/.tmux/tmux_cheatsheet.md
-else
-echo "Cheatsheet for '$1' not found"
-fi
+  case "$1" in
+    "nvim")
+      nvim ~/.config/nvim/cheatsheet.md
+      ;;
+    "tmux")
+      nvim ~/.tmux/tmux_cheatsheet.md
+      ;;
+    "gitProjSSH")
+      nvim ~/.tutorials/gitProjSSH.md
+      ;;
+    "pythonVenv")
+      nvim ~/.tutorials/pythonVenv.md
+      ;;
+    *)
+      echo "Cheatsheet for '$1' not found"
+      ;;
+  esac
 }
+
+
 # Enable auto-correction
 setopt correct
 # Improve performance of compinit
@@ -89,3 +100,7 @@ export PATH="$HOME/.local/neovim/nvim-macos-arm64/bin:$PATH"
 # enable vim keystrokes
 bindkey -v
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
